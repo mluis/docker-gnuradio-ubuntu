@@ -5,6 +5,10 @@ MAINTAINER Miguel Luís <mkxpto+docker@gmail.com>
 ENV APT_DEPS build-essential apt-utils python-pip python-apt
 ENV PIP_DEPS pip PyBOMBS
 ENV DEBIAN_FRONTEND noninteractive
+
+# PROJECTS
+ENV PROJS
+
 # Set working directory
 WORKDIR /data
 # Define volumes
@@ -20,6 +24,9 @@ RUN pip install --upgrade $PIP_DEPS && \
     pybombs recipes add-defaults && \
     pybombs prefix init ./gnur -a gnur && \
     printf "[list]\nformat=columns\n" >> /etc/pip.conf && \
-    pybombs -p ./gnur install gr-gsm
+
+# INSTALL
+    pybombs -p ./gnur install $PROJS
+
 # Define
 ENTRYPOINT  ["/bin/bash"]
