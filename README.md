@@ -7,3 +7,9 @@ This project's intent is to provide a easy way of running gnuradio's projects.
 	passing an environment variable.
 
 	`gr-gsm.Dockerfile` is an example of a dedicated Dockerfile for the gnuradio's gr-gsm project.
+	
+#TODO:
+
+	Create more Dockerfiles for each individual gr-program.
+	Sort of merge them into `Dockerfile`.
+	Implement a proper clean in the Dockerfiles. 
